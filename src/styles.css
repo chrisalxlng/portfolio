@@ -1,0 +1,63 @@
+:root {
+  @font-face {
+    font-family: 'Open Runde';
+    src: url('/fonts/open-runde/OpenRunde-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Runde';
+    src: url('/fonts/open-runde/OpenRunde-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  --color-bg: #FFFFFF;
+  --color-accent: #F0F0F0;
+  --color-typography-attention: #0A0A0A;
+  --color-typography-subtle: #737373;
+  --color-linked-in: #0967C2;
+  --color-github: #171515;
+  --color-on-linked-in: #FFFFFF;
+  --color-on-github: #FFFFFF;
+
+  --font-sans: "Open Runde", system-ui, -apple-system, BlinkMacSystemFont;
+
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 3rem;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+
+  --duration-sm: 0.2s;
+  --duration-md: 0.5s;
+
+  @media (max-width: 550px) {
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-md: 1rem;
+    --font-lg: 2.5rem;
+
+    --space-xs: 0.5rem;
+    --space-sm: 0.95rem;
+    --space-md: 1.6rem;
+  }
+
+  @media (max-width: 380px) {
+    --font-xs: 0.625rem;
+    --font-sm: 0.75rem;
+    --font-md: 0.875rem;
+    --font-lg: 2rem;
+  }
+}
+
+body, h1, h2, h3, button, img, p, ul, nav, li, a {
+  all: unset;
+}

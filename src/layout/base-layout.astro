@@ -1,0 +1,55 @@
+---
+import type { Language } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import "../styles.css";
+
+const { locale } = Astro.props as { locale: Language };
+const t = useTranslations(locale);
+---
+
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="cl.dev" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{t("name")}</title>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">{t("name")}</a>
+    </header>
+    <slot />
+  </body>
+</html>
+
+<style>
+  html {
+    background: var(--color-bg);
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    font-family: var(--font-sans);
+    color: var(--color-typography-attention);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    padding: var(--space-md);
+  }
+
+  header .logo {
+    cursor: pointer;
+  }
+</style>
