@@ -1,0 +1,9 @@
+<script>
+  const lang = navigator.language || "en";
+  console.log("lang", lang);
+  if (lang.startsWith("de")) {
+    window.location.replace("/de");
+  } else {
+    window.location.replace("/en");
+  }
+</script>
