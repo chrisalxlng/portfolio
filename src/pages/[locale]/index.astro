@@ -60,7 +60,12 @@ export async function getStaticPaths() {
           const slug = project.slug.split("/")[1];
           return (
             <li id={slug} class="project">
-              <a href={project.data.url} aria-label={project.data.title}>
+              <a
+                href={project.data.url}
+                aria-label={project.data.title}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div class="project-thumbnail">
                   {project.data.screenshots.map((screenshot) => (
                     <Image
@@ -76,12 +81,6 @@ export async function getStaticPaths() {
                 <div class="project-caption-text">
                   <span class="project-title">{project.data.title}</span>
                   <span class="project-subtitle">{project.data.subtitle}</span>
-                  <a
-                    class="project-github-anchor"
-                    aria-label={t("socials.github")}
-                  >
-                    <GitHubIcon class="project-github-icon" />
-                  </a>
                 </div>
                 <div class="project-caption-tags">
                   {project.data.tags.map((tag) => (
