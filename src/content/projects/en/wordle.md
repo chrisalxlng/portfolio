@@ -7,7 +7,7 @@ tags:
   - TypeScript
   - Raycast
   - Open Source
-url: "https://www.raycast.com/chrisalxlng/wordle"
+url: "https://raycast.com/chrisalxlng/wordle"
 screenshots:
   - ./assets/wordle/screenshot-1.png
 ---
