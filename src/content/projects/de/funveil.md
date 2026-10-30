@@ -1,7 +1,7 @@
 ---
 priority: "medium"
 title: "Funveil"
-subtitle: "Web App für digitale Geschenke"
+subtitle: "Web-App für digitale Geschenke"
 tags:
   - SvelteKit
   - TypeScript
@@ -9,7 +9,7 @@ tags:
   - Tailwind
   - Drizzle
   - QR-Code Generierung
-  - SSR
+  - Server-Side Rendering
 url: "https://funveil.christopherlang.dev"
 screenshots:
   - ./assets/funveil/screenshot-1.png
