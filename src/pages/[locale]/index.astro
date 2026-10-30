@@ -9,12 +9,19 @@ import LinkedInIcon from "../../assets/icons/linkedin.svg";
 import GitHubIcon from "../../assets/icons/github.svg";
 import HeroMeImage from "../../assets/images/hero-me.png";
 
+const priorityOrder = { high: 1, medium: 2, low: 3 };
+
 const locale = Astro.params.locale as Language;
 const t = useTranslations(locale);
 const allProjects = await getCollection("projects");
-const projects = allProjects.filter((project) =>
-  project.slug.startsWith(locale + "/"),
-);
+const projects = allProjects
+  .filter((project) => project.slug.startsWith(locale + "/"))
+  .toSorted((a, b) => {
+    const priorityA = priorityOrder[a.data.priority] ?? 4;
+    const priorityB = priorityOrder[b.data.priority] ?? 4;
+
+    return priorityA - priorityB;
+  });
 
 export async function getStaticPaths() {
   return localeOptions.map((locale) => ({ params: { locale } }));
@@ -273,8 +280,8 @@ export async function getStaticPaths() {
 
   .project-caption-text {
     display: flex;
-    align-items: center;
-    gap: var(--space-sm);
+    flex-direction: column;
+    gap: var(--space-xs);
   }
 
   .project-title {
